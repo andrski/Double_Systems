@@ -2,12 +2,17 @@
 // !!!!!!!!!!! no run script without value of any word!!!!!!!!
 //!!!!!!!!!! for exaple !!!!!!!!! => ""
 //!!!!! ONLY WITH ANY VALUE!!!!!!
+// script return difference between the entered words in characters, taking into acount spaces, periods, commas
 
 let text = 'Lorem,  ipsum dolor sit amet consectetur yyy   ipsum  adipisicing elit yyy amet xx consectetur adipisicing elit. At, totam.'
 let firstWord = 'i'
-let secondWord = ' '
+let secondWord = ''
 
 function wordsDistance(text, fw, sw){
+  if(firstWord === '' && secondWord === '') {
+    console.log('ВЫ НЕ ВВЕЛИ СИМВОЛ ЛИБО СЛОВО, ДОПУСКАЕТСЯ ПРОБЕЛ, ЗАПЯТАЯ И ТОЧКА')
+    return true
+  }
 
 let arr1 = [] // array for position coincidences for first word
 let arr2 = [] // for second
@@ -41,11 +46,8 @@ for(let i = 0; i < arr1.length; i++){
         arrResult.push(Math.abs( arr1[i]-arr2[j]))   //Math.abs -> get absolute value
     }
 }
-// if(target1 === target2){
-//     return 0
-// }
 
-//return(Math.min.apply(null, arrResult) - target1.length) // find minimum value in result array and dif length first word
 return (target1 === target2) ? 0 : (Math.min.apply(null, arrResult) - target1.length)
+
 }
 console.log( wordsDistance(text, firstWord, secondWord))
