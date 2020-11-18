@@ -9,7 +9,7 @@ let firstWord = 'i'
 let secondWord = ''
 
 function wordsDistance(text, fw, sw){
-  if(firstWord === '' && secondWord === '') {
+  if(!firstWord  || !secondWord ) {
     console.log('ВЫ НЕ ВВЕЛИ СИМВОЛ ЛИБО СЛОВО, ДОПУСКАЕТСЯ ПРОБЕЛ, ЗАПЯТАЯ И ТОЧКА')
     return true
   }
